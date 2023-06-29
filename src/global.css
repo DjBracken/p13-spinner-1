@@ -1,0 +1,153 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+canvas {
+  display: block;
+  height: 100vh; 
+  width: 100vw; 
+}
+input {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.lil-gui.root > .children {
+  overflow: hidden !important;
+}
+p {
+  text-align: center;
+  padding: .2em;
+}
+
+/* button */
+button {
+  font-weight: 600;
+  border: solid 2px black;
+  outline: 0;
+  padding: 1rem 4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.08rem;
+  background-color: white;
+  border-radius: 0.35rem;
+  position: relative;
+  cursor: pointer;
+  margin-top: 4em;
+  margin-bottom: .5em;
+  width: 100%;
+}
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: pink;
+  z-index: -1;
+  border-radius: 0.35rem;
+  border: solid 2px black;
+  transition: all 0.3s ease-in-out;
+}
+button#hide-modal::after {
+  border: 0;
+  box-shadow: 0px 0px 0px 2px black;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+button#hide-modal:hover::after {
+  top: -0.5rem;
+  left: -0.5rem;
+  width: calc(100% + 0.5rem * 2);
+  height: calc(100% + 0.5rem * 2);
+}
+
+/* modal */
+.header-text {
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+#modal {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  border: 2px solid black;
+  top: 50px;/*  */
+  border-radius: 10px;
+}
+
+#modal[open] {
+  opacity: 1;
+  pointer-events: auto;
+  animation: slidein 0.5s forwards;
+}
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadein 0.5s forwards;
+}
+
+#modal.close[open] {
+  animation: slideout 0.5s forwards;
+}
+
+#modal.close::backdrop {
+  animation: fadeout 0.5s forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .header-text {
+    font-size: 1.6em;
+  }
+}

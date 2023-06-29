@@ -1,5 +1,2 @@
-# Three.js Spinner
-Written in React, using the Three.js package with Fiber + Drei utilities.
-
-# Live Demo
-https://spinner-codabool.vercel.app/
+# Create a 1/4 chance of anything
+### [Live Demo](https://spin.codabool.com)

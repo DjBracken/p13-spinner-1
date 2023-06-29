@@ -1,37 +1,22 @@
 {
   "name": "spinner",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@react-three/drei": "^7.22.9",
-    "@react-three/fiber": "^7.0.21",
-    "react": "^18.0.0-beta-0cc724c77-20211125",
-    "react-dom": "^18.0.0-beta-0cc724c77-20211125",
-    "react-scripts": "4.0.3",
-    "three": "^0.135.0"
-  },
+  "version": "1.0.0",
+  "author": "codabool",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "host": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@react-three/drei": "^9.77.7",
+    "@react-three/fiber": "^8.13.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.153.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.1",
+    "vite": "^4.3.9"
   }
 }
